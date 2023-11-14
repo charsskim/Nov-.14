@@ -17,10 +17,13 @@ function activation(arr, idx) {
 	arr.forEach((el) => el.classList.remove('on'));
 	arr[idx].classList.add('on');
 }
+
 function splitText(el) {
 	let tags = '';
+	let count = 0;
 	for (let letter of el.innerText) {
-		tags += `<span>${letter}</span>`;
+		tags += `<span style='transition-delay:${0.2 * count}s;'>${letter}</span>`;
+		count++;
 		el.innerHTML = tags;
 	}
 }
